@@ -7,14 +7,15 @@ Ansible Managed Games [Valheim] - @Aetrius
 ```[4GB RAM]```
 
 #### Assumptions: 
-#### 1. user ```tadmin``` is created with a known password. 
-#### 2. Networking is valid between the control (ansible) plane to the host vm(s).
-#### 3. This was deployed via local VMs running Ubuntu.
-#### 4. Using a prior Game install you will overwrite the HAULN.db and HAULN.fwl files by cloning this repo, and replacing the files.
-#### 5. If you do not want to use plugins, delete the .dlls. Try some cool mods. Copy the .dll files and FOLLOW the
-#### -- directions provided in the plugins directories.
-#### 6. Should a plugin be an issue, update the .dll files in the github repo.
-#### 7. Add an ssh folder to the project, and add your ssh keys for ansible.
+#### 1.  user ```tadmin``` is created with a known password. 
+#### 2.  Networking is valid between the control (ansible) plane to the host vm(s).
+#### 2.1 If local allow port forwarding, otherwise, if using aws configure security groups to allow ports exposed to the web for 2456.
+#### 3.  This was deployed via local VMs running Ubuntu.
+#### 4.  Using a prior Game install you will overwrite the HAULN.db and HAULN.fwl files by cloning this repo, and replacing the files.
+#### 5.  If you do not want to use plugins, delete the .dlls. Try some cool mods. Copy the .dll files and FOLLOW the
+####      directions provided in the plugins directories.
+#### 6.  Should a plugin be an issue, update the .dll files in the github repo.
+#### 7.  Add an ssh folder to the project, and add your ssh keys for ansible.
 
 # Ansible Tower / Ansible
 
