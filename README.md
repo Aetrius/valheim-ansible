@@ -30,6 +30,7 @@ Ansible Managed Games [Valheim] - @Aetrius
 
 ## Configuration
 1. If local (Allow Port Forwarding) || If (cloud/aws) (Allow security group ports to valid addresses)
+2. Update the valheim.yml to use any custom server credentials/files.
 
 ## RUN
 ```ansible-playbook -i hosts/inventory.yml docker.yml -Kk --extra-vars "target=prox-aether01"```
