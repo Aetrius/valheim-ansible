@@ -28,6 +28,9 @@ Ansible Managed Games [Valheim] - @Aetrius
 5. Run the docker.yml file with the command below and the proper target name from inventory
 6. Replace ```games/HAULN.db``` && ```games/HAULN.fwl``` with your custom games. We use a few mods, so if you use these game files you likely will run into a potential issue.
 
+## Configuration
+1. If local (Allow Port Forwarding) || If (cloud/aws) (Allow security group ports to valid addresses)
+
 ## RUN
 ```ansible-playbook -i hosts/inventory.yml docker.yml -Kk --extra-vars "target=prox-aether01"```
 
