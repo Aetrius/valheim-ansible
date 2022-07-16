@@ -1,0 +1,96 @@
+---
+- name: Valheim
+  hosts: "{{ target }}"
+  become: yes
+ 
+  tasks:
+
+  - name: Create a directory if it does not exist
+    ansible.builtin.file:
+      path: /home/tadmin/valheim-server
+      state: directory
+      mode: '0755'
+      owner: tadmin
+
+  - name: Create a directory if it does not exist
+    file:
+      path: "{{ item }}"
+      state: directory
+      owner: tadmin
+      group: root
+      mode: 0775
+    loop:
+      - /home/tadmin/valheim-server/config
+      - /home/tadmin/valheim-server/config/worlds/
+      - /home/tadmin/valheim-server/data
+      - /home/tadmin/valheim-server/config/bepinex/plugins
+
+  - name: Create the env file
+    file:
+      path: "/home/tadmin/valheim-server/valheim.env"
+      state: touch
+      mode: 0755
+      owner: tadmin
+
+  - name: Add env properties
+    ansible.builtin.blockinfile:
+      path: /home/tadmin/valheim-server/valheim.env
+      content: |
+        SERVER_NAME=WEHAULN'
+        WORLD_NAME=HAULN
+        SERVER_PASS=Treebeard
+        BEPINEX=true
+
+  - name: copying valheim start shell
+    copy:
+      src: start.sh
+      dest: "/home/tadmin/valheim-server/start.sh"
+      mode: 0755
+
+  - name: Changing perm of start shell
+    file:
+      dest: /home/tadmin/valheim-server/start.sh
+      mode: a+x
+      owner: tadmin
+
+  - name: copying valheim docker compose file
+    copy:
+      src: valheim-compose.yml
+      dest: "/home/tadmin/valheim-server/valheim-compose.yml"
+      mode: 0755
+      owner: tadmin
+
+  - name: copying valheim db
+    copy:
+      src: HAULN.db
+      dest: "/home/tadmin/valheim-server/config/worlds/HAULN.db"
+      mode: 0755
+      owner: tadmin
+
+  - name: copying valheim fwl
+    copy:
+      src: HAULN.fwl
+      dest: "/home/tadmin/valheim-server/config/worlds/HAULN.fwl"
+      mode: 0755
+      owner: tadmin
+
+  - name: copying valheim db
+    copy:
+      src: HAULN.db
+      dest: "/home/tadmin/valheim-server/config/worlds_local/HAULN.db"
+      mode: 0755
+      owner: tadmin
+
+  - name: copying valheim fwl
+    copy:
+      src: HAULN.fwl
+      dest: "/home/tadmin/valheim-server/config/worlds_local/HAULN.fwl"
+      mode: 0755
+      owner: tadmin
+
+  - name: Copy Plugins
+    copy:
+      src: plugins/
+      dest: "/home/tadmin/valheim-server/config/bepinex/plugins"
+      mode: 0755
+      owner: tadmin
