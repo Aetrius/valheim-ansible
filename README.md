@@ -14,6 +14,7 @@ Ansible Managed Games [Valheim] - @Aetrius
 #### 5. If you do not want to use plugins, delete the .dlls. But you're lame if you don't want to try some cool mods. Copy the .dll files and FOLLOW the
 #### -- directions provided in the plugins directories.
 #### 6. Should a plugin be an issue, update the .dll files in the github repo.
+#### 7. Add an ssh folder to the project, and add your ssh keys for ansible.
 
 # Ansible Tower / Ansible
 
