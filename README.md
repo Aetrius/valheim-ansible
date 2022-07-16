@@ -2,10 +2,18 @@ Ansible Managed Games [Valheim] - @Aetrius
 =============
 
 [Fully deployable valheim project]
+```[OS: Ubuntu 22.04]```
+```[2 vCPU]```
+```[4GB RAM]```
 
+#### Assumptions: 
+#### 1. user ```tadmin``` is created with a known password. 
+#### 2. Networking is valid between the control (ansible) plane to the host vm(s).
+#### 3. This was deployed via local VMs running Ubuntu.
 
-Ansible Tower / Ansible
+# Ansible Tower / Ansible
 
+## INSTALLATION
 [Prep ansible from a Windows PC, Install WSL for Ubuntu]
 1. Add an SSH key for the WSL instance
 2. Copy the SSH key to the host to deploy ansible against
@@ -24,3 +32,8 @@ This will run a docker-compose in a detached state so you can still use the VM w
 
 
 Copy new plugins to the games/plugins directory. Run the docker.yml file command above to re-deploy any new files.
+
+## TODO
+#### Need to create a crontab function to start the service if it's not working
+#### Add a new feature to record to slack
+#### Create a slack integration for restarting the server
