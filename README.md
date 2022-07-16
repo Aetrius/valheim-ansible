@@ -1,25 +1,26 @@
-Ansible Managed Games - by Tyler Bennet
+Ansible Managed Games [Valheim] - @Aetrius
 =============
 
+[Fully deployable valheim project]
 
 
 Ansible Tower / Ansible
 
-# Prep ansible from a windows PC, Install WSL for Ubuntu
-# Add an SSH key for the WSL instance
-# Copy the SSH key to the host to deploy ansible against
-# Configure hosts/inventory.yml to use the proper yaml syntax
-# Run the Setup.yml file against the host to configure the networking with Netplan
-# Run the docker.yml file with the command below and the proper target name from inventory
+[Prep ansible from a Windows PC, Install WSL for Ubuntu]
+1. Add an SSH key for the WSL instance
+2. Copy the SSH key to the host to deploy ansible against
+3. Configure hosts/inventory.yml to use the proper yaml syntax
+4. Run the Setup.yml file against the host to configure the networking with Netplan
+5. Run the docker.yml file with the command below and the proper target name from inventory
 
-#RUN
-ansible-playbook -i hosts/inventory.yml docker.yml -Kk --extra-vars "target=prox-aether01"
+## RUN
+```ansible-playbook -i hosts/inventory.yml docker.yml -Kk --extra-vars "target=prox-aether01"```
 
-# On the host run the start.sh as sudo | root
-## i.e. $sudo ./sync.sh
-## This will run a docker-compose in a detached state so you can still use the VM without breaking the docker run.
-## '$sudo docker ps'  will give you the docker container name.
-## '$sudo docker logs container-name' - use the container name from the previous line to see the container logs.
+On the host run the start.sh as sudo | root
+```sudo ./sync.sh```
+This will run a docker-compose in a detached state so you can still use the VM without breaking the docker run.
+```sudo docker ps```  will give you the docker container name.
+```sudo docker logs container-name``` - use the container name from the previous line to see the container logs.
 
 
-## Copy new plugins to the games/plugins directory. Run the docker.yml file command above to re-deploy any new files.
+Copy new plugins to the games/plugins directory. Run the docker.yml file command above to re-deploy any new files.
