@@ -49,4 +49,4 @@ Copy new plugins to the games/plugins directory. Run the docker.yml file command
 #### Add a new feature to record to slack
 #### Create a slack integration for restarting the server
 
-# Go Forth Yee Viking - Oden is calling
+# Go Forth Yee Viking - Odin is calling
