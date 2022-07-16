@@ -10,6 +10,7 @@ Ansible Managed Games [Valheim] - @Aetrius
 #### 1. user ```tadmin``` is created with a known password. 
 #### 2. Networking is valid between the control (ansible) plane to the host vm(s).
 #### 3. This was deployed via local VMs running Ubuntu.
+#### 4. Using a prior Game install you will overwrite the HAULN.db and HAULN.fwl files by cloning this repo, and replacing the files.
 
 # Ansible Tower / Ansible
 
@@ -20,6 +21,7 @@ Ansible Managed Games [Valheim] - @Aetrius
 3. Configure hosts/inventory.yml to use the proper yaml syntax
 4. Run the Setup.yml file against the host to configure the networking with Netplan
 5. Run the docker.yml file with the command below and the proper target name from inventory
+6. Replace ```games/HAULN.db``` && ```games/HAULN.fwl``` with your custom games. We use a few mods, so if you use these game files you likely will run into a potential issue.
 
 ## RUN
 ```ansible-playbook -i hosts/inventory.yml docker.yml -Kk --extra-vars "target=prox-aether01"```
