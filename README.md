@@ -11,6 +11,9 @@ Ansible Managed Games [Valheim] - @Aetrius
 #### 2. Networking is valid between the control (ansible) plane to the host vm(s).
 #### 3. This was deployed via local VMs running Ubuntu.
 #### 4. Using a prior Game install you will overwrite the HAULN.db and HAULN.fwl files by cloning this repo, and replacing the files.
+#### 5. If you do not want to use plugins, delete the .dlls. But you're lame if you don't want to try some cool mods. Copy the .dll files and FOLLOW the
+#### -- directions provided in the plugins directories.
+#### 6. Should a plugin be an issue, update the .dll files in the github repo.
 
 # Ansible Tower / Ansible
 
@@ -39,3 +42,5 @@ Copy new plugins to the games/plugins directory. Run the docker.yml file command
 #### Need to create a crontab function to start the service if it's not working
 #### Add a new feature to record to slack
 #### Create a slack integration for restarting the server
+
+Go Forth Yee Viking
